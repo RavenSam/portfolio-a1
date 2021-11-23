@@ -1,4 +1,12 @@
 import Head from "next/head"
+import { BsCodeSlash } from "react-icons/bs"
+
+const skills = [
+   { name: "skill name", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit", icon: BsCodeSlash },
+   { name: "skill name", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit", icon: BsCodeSlash },
+   { name: "skill name", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit", icon: BsCodeSlash },
+   { name: "skill name", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit", icon: BsCodeSlash },
+]
 
 export default function About() {
    return (
@@ -8,7 +16,39 @@ export default function About() {
             <meta name="description" content="About Me, Who is Sam Makhlouf?" />
          </Head>
 
-         <h2 className="text-xl">About Me</h2>
+         <main className="w-full ">
+            <div className="mb-4 px-4 md:px-8">
+               <h2 className="py-3 text-2xl font-bold">Who am I ?</h2>
+               <p className="text-gray-600">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti quaerat aliquid porro ut quae error
+                  eveniet? Nulla in, dolorum labore rerum nobis magnam quaerat dolorem quod. Animi sit obcaecati
+                  voluptatibus!
+               </p>
+            </div>
+
+            <div className=" w-full py-4 px-4 md:px-8">
+               <h2 className="py-3 text-2xl font-bold capitalize">Some of My Skills</h2>
+
+               <div className="grid grid-cols-12 gap-4 mt-3">
+                  {skills.map((skill, index) => (
+                     <div
+                        key={index}
+                        className="group lg:col-span-6 col-span-12 flex items-start rounded-xl border p-3 shadow-lg hover:border-indigo-500 "
+                     >
+                        <skill.icon className="text-3xl mr-3 text-indigo-500" />
+
+                        <div className="">
+                           <h3 className="text-xl capitalize font-semibold group-hover:text-indigo-500">
+                              {skill.name}
+                           </h3>
+
+                           <p className="text-gray-600 py-2">{skill.description}</p>
+                        </div>
+                     </div>
+                  ))}
+               </div>
+            </div>
+         </main>
       </div>
    )
 }
