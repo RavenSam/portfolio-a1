@@ -6,7 +6,12 @@ const links = [
    { name: "projects", slug: "/projects" },
 ]
 
-export default function Navbar({ pathname }) {
+interface NavProp {
+  pathname: string;
+}
+
+export default function Navbar({pathname}:NavProp) {
+
    return (
       <div className="w-full border-b mb-4 pt-4 px-4">
          <nav className="w-full flex items-center justify-end ">

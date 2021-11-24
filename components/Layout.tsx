@@ -4,7 +4,6 @@ import NextNprogress from "nextjs-progressbar"
 
 import { Sidebar, Navbar } from "."
 
-// my-14 lg:px-28 px-5
 export default function Layout({ children }) {
    const router = useRouter()
 

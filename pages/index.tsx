@@ -16,7 +16,7 @@ export default function About() {
             <meta name="description" content="About Me, Who is Sam Makhlouf?" />
          </Head>
 
-         <main className="w-full ">
+         <main className="w-full">
             <div className="mb-4 px-4 md:px-8">
                <h2 className="py-3 text-2xl font-bold">Who am I ?</h2>
                <p className="text-gray-600">
