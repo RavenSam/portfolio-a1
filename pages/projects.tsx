@@ -1,28 +1,25 @@
-import Head from "next/head"
-import { useState, useEffect }from "react"
+import Head from "next/head";
+import { useState, useEffect } from "react";
 import { projects as projectsData } from "../data";
 import { Category } from "../types";
 
-
-
-import {ProjectsFilter, ProjectCard} from "@components/index";
+import { ProjectsFilter, ProjectCard } from "@components/index";
 
 export default function Projects() {
-   const [projects, setProjects] = useState(projectsData)
+   const [projects, setProjects] = useState(projectsData);
    const [active, setActive] = useState<Category | "all">("all");
 
-   useEffect(()=>{
-      if (active === "all") { 
-         setProjects(projectsData)
+   useEffect(() => {
+      if (active === "all") {
+         setProjects(projectsData);
       } else {
          const filteredProjects = projectsData.filter((project) =>
-               project.category.includes(active)
-          );
+            project.category.includes(active)
+         );
 
-         setProjects(filteredProjects)
+         setProjects(filteredProjects);
       }
-   },[active])
-
+   }, [active]);
 
    return (
       <>
@@ -34,24 +31,19 @@ export default function Projects() {
             />
          </Head>
 
-         <div className="mb-4 px-4 md:px-8 ">
-
-            <h2 className="py-3 text-2xl font-bold capitalize">Projects</h2>
+         <div className="mb-3 px-4 md:px-8 ">
+            <h2 className="py-2 text-2xl font-bold capitalize">Projects</h2>
 
             <ProjectsFilter active={active} setActive={setActive} />
 
-
-            <div className="overflow-y-scroll md:-mr-8" style={{ height: "65vh" }}>
-
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" >
-
-                  {projects.map(project=><ProjectCard key={project.name} project={project} /> )}
-
+            <div className="overflow-y-scroll md:-mr-8" style={{ height: "63vh" }}>
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {projects.map((project) => (
+                     <ProjectCard key={project.name} project={project} />
+                  ))}
                </div>
-
             </div>
          </div>
-
       </>
-   )
+   );
 }

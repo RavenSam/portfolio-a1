@@ -14,7 +14,7 @@ export default function ProjectsFilter({active,setActive}:FilterProp) {
 
 	return (
 
-		<ul className="flex items-center my-4">
+		<ul className="flex items-center my-3">
 
 			{cats.map(cat=> (
 

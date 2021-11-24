@@ -1,13 +1,16 @@
-import { Layout } from "@components/index"
+import { Layout } from "@components/index";
+import { ThemeProvider } from "next-themes";
 
-import "@styles/globals.css"
+import "@styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
    return (
-      <Layout>
-         <Component {...pageProps} />
-      </Layout>
-   )
+      <ThemeProvider enableSystem={true} attribute="class" >
+         <Layout>
+            <Component {...pageProps} />
+         </Layout>
+      </ThemeProvider>
+   );
 }
 
-export default MyApp
+export default MyApp;
