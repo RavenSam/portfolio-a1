@@ -13,7 +13,7 @@ interface NavProp {
 export default function Navbar({pathname}:NavProp) {
 
    return (
-      <div className="w-full border-b mb-4 pt-4 px-4">
+      <div className="w-full  mb-4 pt-4 px-4 border-b dark:border-gray-600">
          <nav className="w-full flex items-center justify-end ">
             {links.map((link, index) => (
                <Link key={index} href={link.slug}>

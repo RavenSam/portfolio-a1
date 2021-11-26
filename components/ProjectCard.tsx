@@ -17,7 +17,7 @@ import { IProject } from "../types"
 
 export default function ProjectCard({project}:{project:IProject}) {
 	return (
-		<div  className=" shadow-md rounded-lg overflow-hidden">
+		<div  className="transition duration-500 ease-in-out shadow-md rounded-lg border-2 border-transparent hover:border-indigo-500 cursor-pointer overflow-hidden dark:bg-gray-800">
             <Image
             	width="560"
             	height="330"
